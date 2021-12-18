@@ -3,6 +3,7 @@ FROM rockylinux:8.5
 MAINTAINER Suhui, <suhui@kokona.tech>
 
 #RUN apt-get update
+RUN DEBIAN_FRONTEND=noninteractive yum install gunpg screen wget sudo git nmap net-tools curl -y
 #RUN DEBIAN_FRONTEND=noninteractive apt-get install gnupg screen wget sudo git software-properties-common -y
 #RUN wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | apt-key add -
 #RUN add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
