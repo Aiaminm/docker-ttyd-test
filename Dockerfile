@@ -3,7 +3,9 @@ FROM rockylinux:8.5
 MAINTAINER Suhui, <suhui@kokona.tech>
 
 
-RUN DEBIAN_FRONTEND=noninteractive yum install wget sudo git nmap net-tools curl gnupg nodejs npm -y \
+RUN DEBIAN_FRONTEND=noninteractive yum install wget sudo git nmap net-tools curl gnupg -y \
+&& curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash - \
+&& yum install nodejs npm \
 && npm install -g web3.storage
 
 
