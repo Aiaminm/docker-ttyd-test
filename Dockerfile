@@ -7,7 +7,7 @@ RUN DEBIAN_FRONTEND=noninteractive yum install wget sudo git nmap net-tools curl
 && curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash - 
 
 
-RUN yum install nodejs \
+RUN yum install nodejs -y \
 && npm install -g web3.storage
 
 
