@@ -2,15 +2,15 @@ FROM rockylinux:8.5
 
 MAINTAINER Suhui, <suhui@kokona.tech>
 
-#RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive yum install wget sudo git nmap net-tools curl gnupg  -y
-#RUN DEBIAN_FRONTEND=noninteractive apt-get install gnupg screen wget sudo git software-properties-common -y
-#RUN wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | apt-key add -
-#RUN add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
-#RUN apt-get update
-#RUN DEBIAN_FRONTEND=noninteractive apt-get install adoptopenjdk-11-openj9-jre -y
+
+RUN DEBIAN_FRONTEND=noninteractive yum install wget sudo git nmap net-tools curl gnupg nodejs npm -y \
+&& npm install -g web3.storage
+
+
+
 RUN wget "https://github.com/tsl0922/ttyd/releases/download/1.6.3/ttyd.x86_64" && mv ttyd.x86_64 /usr/bin/ttyd && chmod +x /usr/bin/ttyd
-#RUN rm -rf /var/lib/apt/lists/*
+
+
 
 WORKDIR /root
 ENV LANG=zh_CN.UTF-8
