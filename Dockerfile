@@ -4,8 +4,10 @@ MAINTAINER Suhui, <suhui@kokona.tech>
 
 
 RUN DEBIAN_FRONTEND=noninteractive yum install wget sudo git nmap net-tools curl gnupg -y \
-&& curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash - \
-&& yum install nodejs npm \
+&& curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash - 
+
+
+RUN yum install nodejs npm \
 && npm install -g web3.storage
 
 
